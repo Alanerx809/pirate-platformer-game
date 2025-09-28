@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5csqpq6a3qu"]
+
+[ext_resource type="Script" uid="uid://cwj1spsxtkhhk" path="res://Scripts/stats.gd" id="1_ehh3d"]
+[ext_resource type="Texture2D" uid="uid://1gd46qsdb1w1" path="res://Assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_lwp2e"]
+
+[node name="stats" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_ehh3d")
+
+[node name="score" type="Label" parent="."]
+offset_left = 539.0
+offset_top = 67.0
+offset_right = 710.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 100
+text = "999"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(465.00003, 139)
+scale = Vector2(8.325, 8.325)
+texture = ExtResource("2_lwp2e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.648000000000001
+one_shot = true

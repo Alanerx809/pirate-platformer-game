@@ -1,0 +1,9 @@
+<svg width="360" height="360" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" d="m185.79998,291.79999c-67.40331,0 -122,-54.59668 -122,-122c0,-67.40331 54.59668,-122 122,-122c67.40331,0 122,54.59668 122,122c0,67.40331 -54.59668,122 -122,122z" opacity="undefined" stroke="#000" fill="#A8FFE9"/>
+  <text transform="rotate(-3.14096 186.914 172.827) matrix(1.37369 0 0 1.27009 -82.0343 -47.8108)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_4" y="181.57942" x="117.31836" fill="#000000">PLATFORMER</text>
+  <text transform="rotate(-3.14096 160.983 122.827) matrix(1.37369 0 0 1.27009 -82.0343 -47.8108)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" stroke-width="0" id="svg_5" y="142.21228" x="136.24555" fill="#000000">PIRATE</text>
+ </g>
+</svg>

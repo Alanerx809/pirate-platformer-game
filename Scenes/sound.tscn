@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4vim3ppfljn4"]
+
+[ext_resource type="AudioStream" uid="uid://d37lvqfn8uwjp" path="res://Sounds/01 - level 1.wav" id="1_djale"]
+[ext_resource type="Script" uid="uid://bshlurxxu7p5l" path="res://Scripts/sound.gd" id="2_2kjdv"]
+[ext_resource type="AudioStream" uid="uid://ryqo8uex0vw6" path="res://Sounds/coin-257878.mp3" id="2_mtqot"]
+
+[node name="sound" type="AudioStreamPlayer"]
+stream = ExtResource("1_djale")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_2kjdv")
+
+[node name="CoinSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mtqot")
+bus = &"SFX"

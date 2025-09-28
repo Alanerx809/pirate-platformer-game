@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc7m3fu4oseye"]
+
+[ext_resource type="Texture2D" uid="uid://gnp0ux07u75s" path="res://Assets/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="1_baomj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_baomj"]
+size = Vector2(32, 7)
+
+[node name="PlatformMINI" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_baomj")
+region_enabled = true
+region_rect = Rect2(128, 65, 32, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_baomj")
+one_way_collision = true

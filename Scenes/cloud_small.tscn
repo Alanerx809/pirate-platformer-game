@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://be1y0hyp07d5x"]
+
+[ext_resource type="Texture2D" uid="uid://bfynkx1470kaj" path="res://Assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="1_w8cc5"]
+
+[node name="cloud_small" type="Sprite2D"]
+z_index = -4096
+texture = ExtResource("1_w8cc5")
