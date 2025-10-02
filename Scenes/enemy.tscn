@@ -31,12 +31,12 @@ animations = [{
 "texture": ExtResource("6_56vhr")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vt4ob"]
-size = Vector2(19, 15)
+size = Vector2(21, 18.5)
 
 [node name="Enemy" type="Node2D"]
 position = Vector2(0, 3)
@@ -45,8 +45,9 @@ script = ExtResource("1_auwsv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_m4x7e")
+animation = &"new_animation"
 autoplay = "default"
-frame_progress = 0.30241603
+frame_progress = 0.34427786
 
 [node name="Killzone" parent="." instance=ExtResource("7_ta2yt")]
 position = Vector2(0, -13)

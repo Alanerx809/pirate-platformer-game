@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3whnx4p4jpxe"]
+[gd_scene load_steps=18 format=3 uid="uid://d3whnx4p4jpxe"]
 
 [ext_resource type="Texture2D" uid="uid://df0yjop0nrdsr" path="res://Assets/Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_smnlx"]
 [ext_resource type="PackedScene" uid="uid://c0wsr8wvwan15" path="res://Scenes/player.tscn" id="2_12fag"]
 [ext_resource type="PackedScene" uid="uid://ctgo2numa56mb" path="res://Scenes/killzone.tscn" id="3_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://be1y0hyp07d5x" path="res://Scenes/cloud_small.tscn" id="3_cggpd"]
+[ext_resource type="PackedScene" uid="uid://b01pv84jplxap" path="res://Scenes/tree.tscn" id="4_055b2"]
 [ext_resource type="PackedScene" uid="uid://b0wcawe3fuo51" path="res://Scenes/ui.tscn" id="4_v36qu"]
+[ext_resource type="PackedScene" uid="uid://bm5t3ahjofl04" path="res://Scenes/spikes.tscn" id="7_42uki"]
+[ext_resource type="PackedScene" uid="uid://box642j3x1w0c" path="res://Scenes/enemy_2.tscn" id="8_t7v2y"]
+[ext_resource type="PackedScene" uid="uid://dc7m3fu4oseye" path="res://Scenes/platform_mini.tscn" id="9_ait6c"]
+[ext_resource type="PackedScene" uid="uid://cy2xb7uvaoamo" path="res://Scenes/platform.tscn" id="10_vcilj"]
+[ext_resource type="PackedScene" uid="uid://cm28nxmffna73" path="res://Scenes/coin.tscn" id="11_t7v2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q6tm"]
 texture = ExtResource("1_smnlx")
@@ -110,12 +117,50 @@ sources/0 = SubResource("TileSetAtlasSource_1q6tm")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cggpd"]
 
+[sub_resource type="Animation" id="Animation_bl0du"]
+resource_name = "movement"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(851, 37), Vector2(917, 37)]
+}
+
+[sub_resource type="Animation" id="Animation_q0ycs"]
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1068, 36), Vector2(1139, 36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hj5x7"]
+_data = {
+&"RESET": SubResource("Animation_q0ycs"),
+&"movement": SubResource("Animation_bl0du")
+}
+
 [node name="Level2" type="Node2D"]
 
 [node name="map" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_v36qu")
 format = 2
-layer_0/tile_data = PackedInt32Array(131072, 0, 0, 196608, 0, 1, 262144, 0, 2, 131073, 65536, 0, 196609, 65536, 1, 262145, 65536, 2, 131074, 131072, 0, 196610, 131072, 1, 262146, 131072, 2, 131078, 0, 4, 131079, 65536, 4, 131080, 131072, 4, 65547, 262144, 0, 131083, 262144, 1, 196619, 262144, 2)
+layer_0/tile_data = PackedInt32Array(131072, 0, 0, 196608, 0, 1, 262144, 0, 2, 131073, 65536, 0, 196609, 65536, 1, 262145, 65536, 2, 131074, 131072, 0, 196610, 131072, 1, 262146, 131072, 2, 131078, 0, 4, 131079, 65536, 4, 131080, 131072, 4, 65547, 262144, 0, 131083, 262144, 1, 196619, 262144, 2, 65551, 0, 0, 131087, 0, 1, 196623, 0, 2, 65552, 65536, 0, 131088, 65536, 1, 196624, 65536, 2, 65553, 65536, 0, 131089, 65536, 1, 196625, 65536, 2, 65554, 131072, 0, 131091, 65536, 0, 131090, 65536, 1, 196626, 65536, 2, 196627, 65536, 2, 131092, 65536, 0, 131093, 65536, 0, 131094, 65536, 0, 65559, 0, 0, 196628, 65536, 2, 196629, 65536, 2, 196630, 65536, 2, 196631, 65536, 2, 196632, 65536, 2, 196633, 131072, 2, 131097, 131072, 1, 65560, 65536, 0, 65561, 131072, 0, 131095, 65536, 1, 131096, 65536, 1, 65573, 0, 4, 65574, 65536, 4, 65575, 131072, 4, 41, 262144, 4, -65493, 262144, 0, 43, 262144, 1, 65579, 262144, 2, 44, 0, 0, 45, 65536, 0, 46, 65536, 0, -65489, 131072, 0, 65580, 0, 2, 65581, 65536, 2, 65582, 65536, 2, 65583, 131072, 2, 47, 131072, 1, 51, 0, 4, 52, 65536, 4, 53, 65536, 4, 54, 65536, 4, 55, 65536, 4, 56, 65536, 4, 57, 65536, 4, 58, 131072, 0, 65594, 0, 1, 65595, 65536, 0, 131130, 0, 2, 131131, 65536, 2, 131132, 65536, 2, 65596, 65536, 0, 65597, 65536, 0, 65598, 65536, 0, 131133, 65536, 2, 131134, 65536, 2, 131135, 131072, 2, 63, 131072, 0, 65599, 131072, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_12fag")]
 position = Vector2(53, 66)
@@ -133,3 +178,235 @@ position = Vector2(115, -9)
 shape = SubResource("WorldBoundaryShape2D_cggpd")
 
 [node name="UI" parent="." instance=ExtResource("4_v36qu")]
+
+[node name="cloud_small" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(14, 13)
+
+[node name="cloud_small2" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(87, -11)
+
+[node name="cloud_small3" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(139, 21)
+
+[node name="cloud_small4" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(224, -2)
+rotation = -0.0043810825
+
+[node name="cloud_small5" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(297, 22.000008)
+rotation = -0.0043810825
+
+[node name="cloud_small6" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(389, 5)
+rotation = -0.0043810825
+
+[node name="cloud_small7" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(513, -15)
+rotation = -0.0043810825
+
+[node name="cloud_small8" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(622, -3)
+rotation = -0.0043810825
+
+[node name="cloud_small9" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(730.99994, -23)
+rotation = -0.0043810825
+
+[node name="cloud_small10" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(831, -1)
+rotation = -0.0043810825
+
+[node name="cloud_small11" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(927, -31)
+rotation = -0.0043810825
+
+[node name="cloud_small12" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1010.99994, 1.9073486e-06)
+rotation = -0.0043810825
+
+[node name="cloud_small13" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1090, -26)
+rotation = -0.0043810825
+
+[node name="cloud_small14" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1184.9999, -9.999998)
+rotation = -0.0043810825
+
+[node name="cloud_small15" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1287, -42)
+rotation = -0.0043810825
+
+[node name="cloud_small16" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1381, -62)
+rotation = -0.0043810825
+
+[node name="cloud_small17" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1364.9999, -19)
+rotation = -0.0043810825
+
+[node name="cloud_small18" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1463.0001, -41)
+rotation = -0.0043810825
+
+[node name="cloud_small19" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1548, -29)
+rotation = -0.0043810825
+
+[node name="cloud_small20" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1657, -40)
+rotation = -0.0043810825
+
+[node name="cloud_small21" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1738.0001, -30)
+rotation = -0.0043810825
+
+[node name="cloud_small22" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1813, -51)
+rotation = -0.0043810825
+
+[node name="cloud_small23" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1901.9999, -41)
+rotation = -0.0043810825
+
+[node name="cloud_small24" parent="." instance=ExtResource("3_cggpd")]
+position = Vector2(1972.9999, -14)
+rotation = -0.0043810825
+
+[node name="Tree" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(76, 33)
+
+[node name="Tree2" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(260, 33)
+
+[node name="Tree3" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(498, 9)
+
+[node name="Tree4" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(684, 36)
+
+[node name="Tree5" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(800, 3)
+
+[node name="Tree6" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1243, 4)
+
+[node name="Tree7" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1333, -29)
+
+[node name="Tree8" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1464, -28)
+
+[node name="Tree9" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1657, -30)
+
+[node name="Tree10" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1764, -26)
+
+[node name="Tree11" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1854, -24)
+
+[node name="Tree12" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1917, 5)
+
+[node name="Tree13" parent="." instance=ExtResource("4_055b2")]
+position = Vector2(1988, 6)
+
+[node name="Spikes" parent="." instance=ExtResource("7_42uki")]
+position = Vector2(241, 67)
+
+[node name="Enemy2" parent="." instance=ExtResource("8_t7v2y")]
+position = Vector2(711, 70)
+
+[node name="PlatformMINI" parent="." instance=ExtResource("9_ait6c")]
+position = Vector2(1068, 36)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformMINI"]
+libraries = {
+&"": SubResource("AnimationLibrary_hj5x7")
+}
+autoplay = "movement"
+
+[node name="Platform" parent="." instance=ExtResource("10_vcilj")]
+position = Vector2(999, 36)
+
+[node name="PlatformMINI2" parent="." instance=ExtResource("9_ait6c")]
+position = Vector2(1068, 36)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformMINI2"]
+root_node = NodePath("../../PlatformMINI2")
+libraries = {
+&"": SubResource("AnimationLibrary_hj5x7")
+}
+autoplay = "RESET"
+
+[node name="Spikes2" parent="." instance=ExtResource("7_42uki")]
+position = Vector2(1232, 33)
+
+[node name="Enemy3" parent="." instance=ExtResource("8_t7v2y")]
+position = Vector2(1484, 6)
+
+[node name="Spikes3" parent="." instance=ExtResource("7_42uki")]
+position = Vector2(1681, 3)
+
+[node name="Enemy4" parent="." instance=ExtResource("8_t7v2y")]
+position = Vector2(1991, 38)
+
+[node name="Spikes4" parent="." instance=ExtResource("7_42uki")]
+position = Vector2(1744, 2)
+
+[node name="Spikes5" parent="." instance=ExtResource("7_42uki")]
+position = Vector2(1817, 1)
+
+[node name="Coin" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(73, 57)
+
+[node name="Coin2" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(209, 56)
+
+[node name="Coin3" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(366, 24)
+
+[node name="Coin4" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(369, 23)
+
+[node name="Coin5" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(525, 26)
+
+[node name="Coin6" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(584, 27)
+
+[node name="Coin7" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(633, 58)
+
+[node name="Coin8" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(704, 59)
+
+[node name="Coin9" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(775, 24)
+
+[node name="Coin10" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(879, 9)
+
+[node name="Coin11" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1001, 22)
+
+[node name="Coin12" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1202, 26)
+
+[node name="Coin13" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1325, -12)
+
+[node name="Coin14" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1393, -41)
+
+[node name="Coin15" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1438, -7)
+
+[node name="Coin16" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1646, -8)
+
+[node name="Coin17" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1785, -7)
+
+[node name="Coin18" parent="." instance=ExtResource("11_t7v2y")]
+position = Vector2(1936, 25)
