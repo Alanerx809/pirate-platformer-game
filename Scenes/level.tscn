@@ -548,7 +548,7 @@ _data = {
 position = Vector2(-2, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_tumq0")]
-position = Vector2(7535.805, -173.52008)
+position = Vector2(-9, -2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-2, -10)
