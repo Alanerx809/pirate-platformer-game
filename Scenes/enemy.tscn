@@ -46,8 +46,8 @@ script = ExtResource("1_auwsv")
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_m4x7e")
 animation = &"new_animation"
-autoplay = "default"
-frame_progress = 0.34427786
+autoplay = "new_animation"
+frame_progress = 0.17177105
 
 [node name="Killzone" parent="." instance=ExtResource("7_ta2yt")]
 position = Vector2(0, -13)
