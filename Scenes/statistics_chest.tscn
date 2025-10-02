@@ -52,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40tin"]
-size = Vector2(31, 23)
+size = Vector2(31, 24)
 
 [node name="Statistics chest" type="Area2D"]
 collision_mask = 2
@@ -65,5 +65,5 @@ animation = &"unlock"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16.5, -12.5)
+position = Vector2(16.5, -13)
 shape = SubResource("RectangleShape2D_40tin")

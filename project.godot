@@ -22,6 +22,7 @@ boot_splash/minimum_display_time=3000
 
 Events="*res://Scripts/events.gd"
 Sound="*res://Scenes/sound.tscn"
+Global="*res://Scripts/global.gd"
 
 [input]
 

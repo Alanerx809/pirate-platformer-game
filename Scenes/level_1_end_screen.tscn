@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://csp5sp5h3rhe7"]
+
+[ext_resource type="Script" uid="uid://dg8w1xs2jyaye" path="res://Scripts/level_1_end_screen.gd" id="1_mn1rf"]
+[ext_resource type="Texture2D" uid="uid://bporl7otcfsir" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/2.png" id="2_7v4pw"]
+[ext_resource type="Texture2D" uid="uid://ci3v8sidbm2qw" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/3.png" id="3_hnpeo"]
+[ext_resource type="Texture2D" uid="uid://bjim0r87d6etb" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/4.png" id="4_xb8rq"]
+[ext_resource type="Texture2D" uid="uid://dkpkx20g6wpv6" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/5.png" id="5_earh7"]
+[ext_resource type="Texture2D" uid="uid://dept6ddujd50d" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/6.png" id="6_c58lj"]
+[ext_resource type="Texture2D" uid="uid://ct7bp5gc4oecu" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/7.png" id="7_8ppf7"]
+[ext_resource type="Texture2D" uid="uid://dyeroypc6qy60" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/8.png" id="8_rm2pp"]
+[ext_resource type="Texture2D" uid="uid://dmm8a5ey45be" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/9.png" id="9_wyuwf"]
+[ext_resource type="Texture2D" uid="uid://c6urixfrgee2v" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Board/1.png" id="10_qlgsi"]
+[ext_resource type="Texture2D" uid="uid://srmqaf43cyle" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/22.png" id="11_ougai"]
+[ext_resource type="Texture2D" uid="uid://bqxkdhji4a40t" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Big Text/12.png" id="12_earh7"]
+[ext_resource type="Texture2D" uid="uid://bctcsb6cjfipm" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Big Text/5.png" id="13_c58lj"]
+[ext_resource type="Texture2D" uid="uid://crtxvwa8huqm8" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Big Text/28.png" id="14_8ppf7"]
+[ext_resource type="Texture2D" uid="uid://ypmptgp7t08h" path="res://Assets/Treasure Hunters/Wood and Paper UI/Sprites/Big Text/22.png" id="15_rm2pp"]
+
+[node name="Level1EndScreen" type="Node2D"]
+editor_description = "
+"
+script = ExtResource("1_mn1rf")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(196, 118)
+texture = ExtResource("2_7v4pw")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(228, 118)
+texture = ExtResource("3_hnpeo")
+
+[node name="4" type="Sprite2D" parent="3"]
+position = Vector2(-63, 32)
+texture = ExtResource("4_xb8rq")
+
+[node name="5" type="Sprite2D" parent="3"]
+position = Vector2(-31, 32)
+texture = ExtResource("5_earh7")
+
+[node name="6" type="Sprite2D" parent="3"]
+position = Vector2(0, 32)
+texture = ExtResource("6_c58lj")
+
+[node name="7" type="Sprite2D" parent="3"]
+position = Vector2(-63, 64)
+texture = ExtResource("7_8ppf7")
+
+[node name="8" type="Sprite2D" parent="3"]
+position = Vector2(-31, 64)
+texture = ExtResource("8_rm2pp")
+
+[node name="9" type="Sprite2D" parent="3"]
+position = Vector2(0, 64)
+texture = ExtResource("9_wyuwf")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(165, 118)
+texture = ExtResource("10_qlgsi")
+
+[node name="22" type="Sprite2D" parent="."]
+position = Vector2(180, 132.00002)
+scale = Vector2(1.625, 1.8333334)
+texture = ExtResource("11_ougai")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 189.0
+offset_top = 121.0
+offset_right = 229.0
+offset_bottom = 144.0
+scale = Vector2(1.0039948, 0.8732352)
+text = "20s"
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(166, 164)
+texture = ExtResource("12_earh7")
+
+[node name="5" type="Sprite2D" parent="."]
+position = Vector2(177, 164)
+texture = ExtResource("13_c58lj")
+
+[node name="5" type="Sprite2D" parent="5"]
+position = Vector2(25, 0)
+texture = ExtResource("13_c58lj")
+
+[node name="12" type="Sprite2D" parent="5"]
+position = Vector2(38, 0)
+texture = ExtResource("12_earh7")
+
+[node name="28" type="Sprite2D" parent="5"]
+position = Vector2(54, 0)
+texture = ExtResource("14_8ppf7")
+
+[node name="23" type="Sprite2D" parent="."]
+position = Vector2(189, 165)
+texture = ExtResource("15_rm2pp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(198, 149)
+scale = Vector2(-0.56, 1)
+zoom = Vector2(11, 7)
