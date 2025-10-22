@@ -3,12 +3,14 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 
-
+var collected = false
 
 func _on_body_entered(body: Node2D) -> void:
-	Events.emit_signal("on_coin_collect")
-	animated_sprite_2d.play("collect")
-	timer.start()
+	if collected == false:
+		Events.emit_signal("on_coin_collect")
+		animated_sprite_2d.play("collect")
+		timer.start()
+		collected = true
 
 
 
